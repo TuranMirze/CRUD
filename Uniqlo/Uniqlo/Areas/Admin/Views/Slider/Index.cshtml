@@ -1,0 +1,41 @@
+﻿@{
+    int a = 1;
+}
+@model List<Slider>
+<a asp-controller="Slider" asp-action="Create" class="btn btn-link">Create</a>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Slider List</h6>
+        <a asp-action="Create" asp-controller="Slider" class="btn btn-outline-primary ml-auto">Create</a>
+    </div>
+    <div class="card-body">
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">Title</th>
+            <th scope="col">Image</th>
+            <th scope="col">Subtitle</th>
+            <th scope="col">Link</th>
+            <th colspan="2" scope="col">Action</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.</td>
+                <td>@item.Title</td>
+                <td><img src="~/imgs/sliders/@item.ImageUrl" width="50"/></td>
+
+            </tr>             
+        }
+    </tbody>
+</table>
+    </div>
+</div>
+
+
+
